@@ -113,11 +113,15 @@ section,.bf-hero{scroll-margin-top:84px}
 .bf-bar{height:100%;width:0;background:var(--c);border-radius:6px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
 .bf-row.is-top .bf-bar{background:var(--o)}
 .bf-row-v{grid-column:3;grid-row:1/3;font-family:Antonio,Impact,sans-serif;font-size:26px;font-weight:700;text-align:right;min-width:70px;font-variant-numeric:tabular-nums}
-.bf-banner{position:relative;border-radius:18px;overflow:hidden;min-height:clamp(200px,28vw,320px);display:flex;align-items:flex-end;padding:22px;background:#1a1a1d url(fotos/gym.jpg) center 30%/cover}
-.bf-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,0),rgba(11,11,13,.92))}
-.bf-banner>div{position:relative;z-index:1}
-.bf-banner h2{font-size:clamp(24px,3.4vw,34px)}
-.bf-banner p{margin:6px 0 0;color:#E9E4D8;font-size:15px}
+.bf-banner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);border-radius:18px;overflow:hidden;background:rgba(8,8,10,.6);border:1px solid rgba(255,255,255,.08)}
+.bf-banner-foto{position:relative;aspect-ratio:6/5;background:#1a1a1d url(fotos/proceso.jpg) 52% 35%/cover}
+.bf-banner-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,10,0) 62%,rgba(8,8,10,.85))}
+.bf-banner-txt{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(20px,3vw,40px)}
+.bf-banner h2{font-size:clamp(36px,4.6vw,60px)}
+.bf-banner p{margin:0;color:#D8D4CA;font-size:16px;line-height:1.5;max-width:36ch}
+.bf-banner-kg{display:flex;align-items:baseline;gap:12px;margin-top:4px}
+.bf-banner-kg b{font-family:Antonio,Impact,sans-serif;font-weight:700;font-size:clamp(52px,6vw,76px);line-height:1;color:var(--o)}
+.bf-banner-kg span{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut)}
 .bf-tips ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px;counter-reset:t}
 .bf-tips li{background:rgba(8,8,10,.55);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;font-size:15px;line-height:1.45;color:#D8D4CA;counter-increment:t}
 .bf-tips li::before{content:counter(t,decimal-leading-zero);display:block;font-family:Antonio,Impact,sans-serif;font-size:40px;font-weight:700;color:var(--o);margin-bottom:6px}
@@ -194,7 +198,11 @@ section,.bf-hero{scroll-margin-top:120px}
 .bf-row-d{display:none}
 .bf-row-t{font-size:14px}
 .bf-row-v{font-size:17px;min-width:54px}
-.bf-banner{min-height:150px;padding:18px}
+.bf-banner{grid-template-columns:minmax(0,1fr)}
+.bf-banner-foto{aspect-ratio:4/3;background-position:52% 30%}
+.bf-banner-foto::after{background:linear-gradient(180deg,rgba(8,8,10,0) 60%,rgba(8,8,10,.85))}
+.bf-banner-txt{padding:4px 18px 20px;gap:10px}
+.bf-banner p{font-size:15px}
 .bf-tips li{padding:16px;font-size:14px}
 }
 </style>
@@ -285,7 +293,15 @@ section,.bf-hero{scroll-margin-top:120px}
 </section>
 
 <section class="bf-card bf-tips bf-reveal" id="consejos">
-<div class="bf-banner"><div><h2>El proceso</h2><p>De 135 a 107 kg, un reel por día.</p></div></div>
+<div class="bf-banner">
+<div class="bf-banner-foto" role="img" aria-label="Mateo entrenando en el gimnasio"></div>
+<div class="bf-banner-txt">
+<div class="bf-kicker">Lo que aprendí</div>
+<h2>El proceso</h2>
+<p>De 135 a 107 kg, un reel por día. Estas son las cuatro cosas que más me sirvieron.</p>
+<div class="bf-banner-kg"><b>−28</b><span>kilos en 6 meses</span></div>
+</div>
+</div>
 <ol>
 <li><strong>No esperes tener ganas.</strong> Los días sin ganas fui igual, aunque sea a hacer lo mínimo.</li>
 <li><strong>Empezá chico.</strong> Pero todos los días. El primer paso es el más difícil.</li>
