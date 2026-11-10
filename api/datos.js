@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE = 'https://connectors.windsor.ai/instagram';
-const CUENTA = '17841421356337024';
+// Windsor puede devolver la cuenta con cualquiera de estos dos IDs
+const CUENTAS = ['17841421356337024', '39742069612106685'];
 const CONSULTAS = {
   perfil: { fields: 'account_id,username,followers_count,follows_count,media_count' },
   diario: { fields: 'account_id,date,views,views_followers,views_non_followers,accounts_engaged,likes,comments,saves,shares,total_interactions', date_preset: 'last_30dT' },
@@ -19,7 +20,7 @@ async function consultar(apiKey, params) {
   const filas = Array.isArray(j) ? j : j.data;
   if (!Array.isArray(filas)) throw new Error('Respuesta inesperada de Windsor');
   // Si hay varias cuentas conectadas, quedarse solo con @braghero.fit
-  const propias = filas.filter((f) => !f.account_id || String(f.account_id) === CUENTA);
+  const propias = filas.filter((f) => !f.account_id || CUENTAS.includes(String(f.account_id)));
   return propias.map(({ account_id, ...resto }) => resto);
 }
 
