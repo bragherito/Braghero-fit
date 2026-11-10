@@ -9,7 +9,9 @@ const CUENTAS = ['17841421356337024', '39742069612106685'];
 const CONSULTAS = {
   perfil: { fields: 'account_id,username,followers_count,follows_count,media_count' },
   diario: { fields: 'account_id,date,views,views_followers,views_non_followers,accounts_engaged,likes,comments,saves,shares,total_interactions', date_preset: 'last_30dT' },
-  reels: { fields: 'account_id,media_id,timestamp,media_caption,media_permalink,media_views,media_reach,media_saved,media_shares,media_reel_total_interactions,media_reel_avg_watch_time,media_reel_skip_rate', date_preset: 'last_30dT' }
+  // Todas las publicaciones (reels, carruseles e imágenes) con sus métricas.
+  // Las de reels (retención, gancho) vienen vacías en carruseles e imágenes, y al revés con visitas y seguidores.
+  publicaciones: { fields: 'account_id,media_id,media_type,media_product_type,timestamp,media_caption,media_permalink,media_url,media_thumbnail_url,media_views,media_reach,media_saved,media_shares,media_like_count,media_comments_count,media_engagement,media_follows,media_profile_visits,media_reel_total_interactions,media_reel_avg_watch_time,media_reel_skip_rate', date_preset: 'last_30dT' }
 };
 
 async function consultar(apiKey, params) {
@@ -37,13 +39,15 @@ module.exports = async (req, res) => {
   const apiKey = process.env.WINDSOR_API_KEY;
   try {
     if (!apiKey) throw new Error('Falta WINDSOR_API_KEY');
-    const [perfil, diario, reels] = await Promise.all([
+    const [perfil, diario, publicaciones] = await Promise.all([
       consultar(apiKey, CONSULTAS.perfil),
       consultar(apiKey, CONSULTAS.diario),
-      consultar(apiKey, CONSULTAS.reels)
+      consultar(apiKey, CONSULTAS.publicaciones)
     ]);
+    // "reels" se mantiene para que versiones viejas de la página sigan funcionando
+    const reels = publicaciones.filter((p) => /REEL|VIDEO/.test(String(p.media_type)));
     res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=' + segundosHastaProxima());
-    res.status(200).json({ actualizado: new Date().toISOString().replace(/\.\d+Z$/, 'Z'), perfil, diario, reels });
+    res.status(200).json({ actualizado: new Date().toISOString().replace(/\.\d+Z$/, 'Z'), perfil, diario, publicaciones, reels });
   } catch (e) {
     // Si Windsor falla, devolver la última copia guardada para que la página no quede vacía
     console.error(e);
