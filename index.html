@@ -128,6 +128,83 @@ section,.bf-hero{scroll-margin-top:84px}
 .bf-tips li strong{color:var(--ink)}
 .bf-foot{text-align:center;font-size:13px;color:var(--mut);padding:8px 0 24px}
 .bf-foot a{color:var(--o)}
+/* ---- Todas las publicaciones ---- */
+.bf-ico{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bf-cnt{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;opacity:.75;margin-left:2px}
+.bf-tipos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.bf-tipo{appearance:none;text-align:left;font:inherit;color:inherit;cursor:pointer;background:rgba(8,8,10,.55);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;transition:border-color .25s,transform .25s,background-color .25s}
+.bf-tipo:hover{transform:translateY(-2px);border-color:rgba(255,90,31,.5)}
+.bf-tipo:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.bf-tipo[aria-pressed="true"]{border-color:var(--o);background:rgba(255,90,31,.1)}
+.bf-tipo.is-vacio{opacity:.5}
+.bf-tipo-top{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px}
+.bf-tipo-top svg{width:18px;height:18px;flex:none}
+.bf-tipo-n{margin-left:auto;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--mut);font-weight:500}
+.bf-tipo-big{font-family:Antonio,Impact,sans-serif;font-size:clamp(32px,3.4vw,42px);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.bf-tipo-lbl{font-size:12px;color:var(--mut);margin-top:-4px}
+.bf-tipo-bar{height:6px;background:#222226;border-radius:3px;overflow:hidden}
+.bf-tipo-bar i{display:block;height:100%;width:0;border-radius:3px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.bf-tipo-mini{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--mut)}
+.bf-tipo-mini b{color:var(--ink);font-weight:700}
+.bf-orden{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:13px;color:var(--mut)}
+.bf-posts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:14px}
+.bf-post{appearance:none;border:1px solid rgba(255,255,255,.08);background:rgba(8,8,10,.55);color:inherit;font:inherit;text-align:left;padding:0;border-radius:18px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;min-width:0;transition:transform .3s,border-color .3s,box-shadow .3s}
+.bf-post:hover,.bf-post:focus-visible{transform:translateY(-4px);border-color:rgba(255,90,31,.6);box-shadow:0 14px 34px rgba(0,0,0,.45);outline:none}
+.bf-post-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(135deg,#2a1a12,#111114)}
+.bf-post-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.bf-post:hover .bf-post-img img{transform:scale(1.06)}
+.bf-post-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.35) 0%,rgba(11,11,13,0) 30%,rgba(11,11,13,0) 55%,rgba(11,11,13,.9) 100%)}
+.bf-post-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#5A5852}
+.bf-post-ph svg{width:44px;height:44px}
+.bf-badge{position:absolute;left:10px;top:10px;z-index:1;display:flex;align-items:center;gap:6px;background:rgba(11,11,13,.78);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700}
+.bf-badge svg{width:14px;height:14px}
+.bf-top{position:absolute;right:10px;top:10px;z-index:1;background:var(--o);color:#0E0E10;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.bf-post-v{position:absolute;left:12px;right:12px;bottom:10px;z-index:1;display:flex;align-items:baseline;gap:6px}
+.bf-post-v b{font-family:Antonio,Impact,sans-serif;font-size:30px;font-weight:700;line-height:1}
+.bf-post-v span{font-size:12px;color:#D8D4CA}
+.bf-post-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.bf-post-t{font-size:14px;font-weight:600;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em;overflow-wrap:anywhere}
+.bf-post-d{font-size:12px;color:var(--mut)}
+.bf-post-m{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;font-size:12px;color:#D8D4CA;margin-top:auto}
+.bf-post-m span{display:flex;align-items:center;gap:4px;min-width:0;font-variant-numeric:tabular-nums}
+.bf-post-m svg{width:14px;height:14px;flex:none;color:var(--mut)}
+.bf-vacio{grid-column:1/-1;text-align:center;padding:32px 16px;color:var(--mut);border:1px dashed var(--line);border-radius:16px;font-size:15px}
+.bf-leyenda{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#D8D4CA;margin-top:-4px}
+.bf-leyenda span{display:flex;align-items:center;gap:6px}
+.bf-leyenda i{width:10px;height:10px;border-radius:50%;display:block}
+/* Detalle de una publicación */
+.bf-modal{border:0;padding:0;background:transparent;color:var(--ink);width:min(880px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);overflow:visible}
+.bf-modal::backdrop{background:rgba(4,4,6,.72);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+.bf-modal-in{position:relative;background:#141417;border:1px solid #2f2f35;border-radius:22px;overflow:auto;max-height:calc(100dvh - 24px);display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.bf-modal-img{position:relative;min-height:320px;background:linear-gradient(135deg,#2a1a12,#111114)}
+.bf-modal-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bf-modal-txt{padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.bf-modal-txt h3{margin:0;font-family:Antonio,Impact,sans-serif;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:1.05;overflow-wrap:anywhere}
+.bf-modal-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:13px;color:var(--mut)}
+.bf-modal-meta .bf-badge{position:static}
+.bf-x{position:absolute;right:12px;top:12px;z-index:3;appearance:none;border:1px solid #3A3A40;background:rgba(20,20,23,.85);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background-color .2s,transform .2s}
+.bf-x:hover{background:var(--o);color:#0E0E10;transform:rotate(90deg)}
+.bf-x svg{width:18px;height:18px}
+.bf-mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.bf-m{background:#1c1c20;border:1px solid #26262b;border-radius:14px;padding:10px 12px;min-width:0}
+.bf-m span{display:block;font-size:12px;color:var(--mut)}
+.bf-m b{display:block;font-family:Antonio,Impact,sans-serif;font-size:28px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums}
+.bf-m small{display:block;font-size:11px;line-height:1.3;color:var(--mut)}
+.bf-m small.up{color:#7BD88F}
+.bf-m small.down{color:#FF8A7A}
+.bf-m.is-dest{border-color:rgba(255,90,31,.45);background:rgba(255,90,31,.08)}
+.bf-cap{margin:0;font-size:14px;line-height:1.5;color:#D8D4CA;white-space:pre-line;max-height:8.5em;overflow:auto;overflow-wrap:anywhere;padding-right:4px}
+.bf-nota{margin:0;font-size:12px;color:var(--mut);line-height:1.4}
+/* El detalle vive fuera del panel, así que usa el ancho de pantalla */
+@media (max-width: 640px){
+.bf-modal{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}
+.bf-modal-in{grid-template-columns:minmax(0,1fr);max-height:calc(100dvh - 16px);border-radius:18px}
+.bf-modal-img{min-height:0;aspect-ratio:4/3;max-height:38dvh}
+.bf-modal-txt{padding:16px 14px 20px;gap:12px}
+.bf-m{padding:9px 10px}
+.bf-m b{font-size:24px}
+}
+.bf-modal-a{align-self:flex-start;text-decoration:none;background:var(--o);color:#0E0E10;font-weight:700;padding:11px 18px;border-radius:999px;font-size:14px}
 .bf-error{background:var(--pan);border:1px solid var(--line);border-radius:16px;padding:18px;color:var(--mut)}
 @media (prefers-reduced-motion: no-preference){
 .bf-live{animation:bfPulse 2s infinite}
@@ -158,6 +235,13 @@ section,.bf-hero{scroll-margin-top:84px}
 .is-in .bf-kpi:nth-child(2),.is-in.bf-tips li:nth-child(2){transition-delay:.08s}
 .is-in .bf-kpi:nth-child(3),.is-in.bf-tips li:nth-child(3){transition-delay:.16s}
 .is-in .bf-kpi:nth-child(4),.is-in.bf-tips li:nth-child(4){transition-delay:.24s}
+.bf-post.is-new{animation:bfCard .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes bfCard{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}
+.bf-modal[open] .bf-modal-in{animation:bfModal .4s cubic-bezier(.2,.8,.2,1)}
+.bf-modal[open]::backdrop{animation:bfFade .3s ease}
+@keyframes bfModal{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes bfFade{from{opacity:0}to{opacity:1}}
+.bf-modal[open] .bf-m{animation:bfCard .45s cubic-bezier(.2,.8,.2,1) both}
 }
 @container (min-width: 1000px){
 .bf-title{font-size:150px}
@@ -176,7 +260,21 @@ section,.bf-hero{scroll-margin-top:120px}
 .bf-me b{font-size:15px}
 .bf-me span{font-size:11px;line-height:1.3}
 .bf-nav{flex-wrap:wrap;overflow:visible;gap:4px;padding:6px;border-radius:18px}
-.bf-nav a{flex:1 1 30%;text-align:center;padding:8px 4px}
+.bf-nav a{flex:1 1 22%;text-align:center;padding:8px 2px}
+.bf-tipos{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.bf-tipo{padding:10px;gap:6px;border-radius:14px}
+.bf-tipo-top{flex-direction:column;align-items:flex-start;gap:4px;font-size:13px}
+.bf-tipo-n,.bf-tipo-mini{display:none}
+.bf-tipo-big{font-size:26px}
+.bf-tipo-lbl{font-size:11px;margin-top:-2px}
+.bf-posts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.bf-post{border-radius:14px}
+.bf-post-v b{font-size:24px}
+.bf-post-body{padding:10px 10px 12px;gap:6px}
+.bf-post-t{font-size:13px}
+.bf-post-m{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:6px}
+.bf-badge{left:8px;top:8px;padding:4px 8px;font-size:11px}
+.bf-top{right:8px;top:8px;font-size:10px;padding:3px 7px}
 .bf-head>div{min-width:0;width:100%}
 .bf-sub{font-size:13px}
 .bf-chart{min-height:0}
@@ -219,7 +317,7 @@ section,.bf-hero{scroll-margin-top:120px}
 </div>
 
 <nav class="bf-nav" aria-label="Secciones">
-<a href="#numeros">Resumen</a><a href="#por-dia">Día a día</a><a href="#quien-te-ve">Quién me ve</a><a href="#horario">Horario</a><a href="#ranking">Reels</a><a href="#consejos">Consejos</a>
+<a href="#numeros">Resumen</a><a href="#por-dia">Día a día</a><a href="#posteos">Posteos</a><a href="#quien-te-ve">Público</a><a href="#horario">Horario</a><a href="#ranking">Reels</a><a href="#consejos">Consejos</a>
 </nav>
 
 <header class="bf-hero">
@@ -240,7 +338,7 @@ section,.bf-hero{scroll-margin-top:120px}
 <div class="bf-marquee" aria-hidden="true"><div class="track" id="marq"></div></div>
 
 <section class="bf-kpis bf-reveal" id="numeros" aria-label="Números principales">
-<div class="bf-kpi"><div class="bf-kpi-num" data-k="vistas">—</div><div class="bf-kpi-lbl">vistas sumando todos los reels</div></div>
+<div class="bf-kpi"><div class="bf-kpi-num" data-k="vistas">—</div><div class="bf-kpi-lbl">vistas sumando todas las publicaciones</div></div>
 <div class="bf-kpi"><div class="bf-kpi-num" data-k="pct">—</div><div class="bf-kpi-lbl">de las vistas son de gente que todavía no me sigue</div></div>
 <div class="bf-kpi"><div class="bf-kpi-num" data-k="seg">—</div><div class="bf-kpi-lbl">seguidores</div></div>
 <div class="bf-kpi"><div class="bf-kpi-num" data-k="int">—</div><div class="bf-kpi-lbl">interacciones: me gusta, comentarios, compartidos y guardados</div></div>
@@ -260,6 +358,30 @@ section,.bf-hero{scroll-margin-top:120px}
 <div class="bf-chart" id="g-dia"></div>
 </section>
 
+<section class="bf-card bf-reveal" id="posteos">
+<div class="bf-head">
+<div><h2>Todas mis publicaciones</h2><p class="bf-sub">Reels, carruseles e imágenes de los últimos 30 días. Tocá una para ver todos sus números.</p></div>
+<div class="bf-seg" role="group" aria-label="Tipo de publicación" data-group="tipo">
+<button type="button" data-val="todo" aria-pressed="true">Todo <span class="bf-cnt" data-c="todo"></span></button>
+<button type="button" data-val="reel" aria-pressed="false">Reels <span class="bf-cnt" data-c="reel"></span></button>
+<button type="button" data-val="carrusel" aria-pressed="false">Carruseles <span class="bf-cnt" data-c="carrusel"></span></button>
+<button type="button" data-val="imagen" aria-pressed="false">Imágenes <span class="bf-cnt" data-c="imagen"></span></button>
+</div>
+</div>
+<div class="bf-tipos" id="g-tipos" aria-label="Comparación por tipo"></div>
+<div class="bf-orden">
+<span>Ordenar por</span>
+<div class="bf-seg" role="group" aria-label="Ordenar publicaciones" data-group="orden">
+<button type="button" data-val="recientes" aria-pressed="true">Recientes</button>
+<button type="button" data-val="vistas" aria-pressed="false">Vistas</button>
+<button type="button" data-val="inter" aria-pressed="false">Interacciones</button>
+<button type="button" data-val="compartidos" aria-pressed="false">Compartidos</button>
+<button type="button" data-val="guardados" aria-pressed="false">Guardados</button>
+</div>
+</div>
+<div class="bf-posts" id="g-posts" aria-live="polite"></div>
+</section>
+
 <div class="bf-grid2">
 <section class="bf-card bf-reveal" id="quien-te-ve">
 <div><h2>¿Quién me ve?</h2><p class="bf-sub">Vistas de gente que me sigue y de gente que no</p></div>
@@ -272,7 +394,8 @@ section,.bf-hero{scroll-margin-top:120px}
 </div>
 </section>
 <section class="bf-card bf-reveal" id="horario">
-<div><h2>¿A qué hora funciona mejor?</h2><p class="bf-sub">Cada punto es un reel, en hora de Argentina. Más grande, más compartido.</p></div>
+<div><h2>¿A qué hora funciona mejor?</h2><p class="bf-sub">Cada punto es una publicación, en hora de Argentina. Más grande, más compartida.</p></div>
+<div class="bf-leyenda" id="ley-horas"></div>
 <div class="bf-chart" id="g-horas"></div>
 </section>
 </div>
@@ -310,8 +433,23 @@ section,.bf-hero{scroll-margin-top:120px}
 </ol>
 </section>
 
-<footer class="bf-foot">Datos de Instagram de <a href="https://www.instagram.com/braghero.fit/">@braghero.fit</a>. <span id="upd-pie"></span></footer>
+<footer class="bf-foot">Datos de Instagram de <a href="https://www.instagram.com/braghero.fit/">@braghero.fit</a>. Se actualizan todos los días a las 10:00 y a las 20:00 (hora Argentina). <span id="upd-pie"></span></footer>
 </div>
+
+<dialog class="bf-modal" id="detalle" aria-labelledby="det-t">
+<div class="bf-modal-in">
+<button type="button" class="bf-x" id="det-x" aria-label="Cerrar"><svg viewBox="0 0 24 24" class="bf-ico"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<div class="bf-modal-img" id="det-img"></div>
+<div class="bf-modal-txt">
+<div class="bf-modal-meta" id="det-meta"></div>
+<h3 id="det-t"></h3>
+<div class="bf-mgrid" id="det-m"></div>
+<p class="bf-nota" id="det-nota"></p>
+<p class="bf-cap" id="det-cap"></p>
+<a class="bf-modal-a" id="det-a" href="#" target="_blank" rel="noopener">Ver en Instagram</a>
+</div>
+</div>
+</dialog>
 
 <script>
 (function () {
@@ -328,34 +466,77 @@ section,.bf-hero{scroll-margin-top:120px}
   const DIAS = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
   const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
   const trunc = (s, n) => { s = String(s || ''); return s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s; };
-  const state = { metric: 'views', sort: 'vistas' };
+  const state = { metric: 'views', sort: 'vistas', tipo: 'todo', orden: 'recientes' };
+  const ICO = {
+    reel: '<svg viewBox="0 0 24 24" class="bf-ico"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M10 8.5v7l6-3.5z"/></svg>',
+    carrusel: '<svg viewBox="0 0 24 24" class="bf-ico"><rect x="7" y="3" width="14" height="14" rx="3"/><path d="M3 7v11a3 3 0 0 0 3 3h11"/></svg>',
+    imagen: '<svg viewBox="0 0 24 24" class="bf-ico"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="9" cy="9" r="2"/><path d="M21 16l-5-5-9 10"/></svg>',
+    ojo: '<svg viewBox="0 0 24 24" class="bf-ico"><path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+    like: '<svg viewBox="0 0 24 24" class="bf-ico"><path d="M12 20s-7.5-4.6-9.3-9.1C1.5 7.8 3.6 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.4 0 5.5 3.3 4.3 6.4C19.5 15.4 12 20 12 20z"/></svg>',
+    coment: '<svg viewBox="0 0 24 24" class="bf-ico"><path d="M4 5h16v11H9l-5 4z"/></svg>',
+    share: '<svg viewBox="0 0 24 24" class="bf-ico"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg>',
+    save: '<svg viewBox="0 0 24 24" class="bf-ico"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>'
+  };
+  const TIPOS = {
+    reel: { n: 'Reels', s: 'Reel', c: '#FF5A1F', vacio: 'Todavía no hay reels en estos 30 días.' },
+    carrusel: { n: 'Carruseles', s: 'Carrusel', c: '#E9E4D8', vacio: 'Todavía no subiste carruseles en estos 30 días.' },
+    imagen: { n: 'Imágenes', s: 'Imagen', c: '#FFB27A', vacio: 'Todavía no subiste imágenes sueltas en estos 30 días. Cuando subas una, aparece acá sola.' }
+  };
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const drawn = {};
   let D = null;
 
+  const tipoDe = (t) => { t = String(t || 'REELS').toUpperCase(); return t.includes('CAROUSEL') ? 'carrusel' : t === 'IMAGE' ? 'imagen' : 'reel'; };
+  const num = (v) => (v === null || v === undefined || v === '' ? null : +v || 0);
+
   function preparar(raw) {
-    const reels = (raw.reels || []).map((r) => {
+    // Versiones viejas de la API solo traían "reels"
+    const fuente = raw.publicaciones || (raw.reels || []).map((r) => Object.assign({ media_type: 'REELS' }, r));
+    const posts = fuente.map((r) => {
       const utc = new Date(String(r.timestamp || '').replace(/([+-]\d\d)(\d\d)$/, '$1:$2'));
       const ar = new Date(utc.getTime() - 3 * 3600 * 1000);
       const texto = String(r.media_caption || '');
       const lineas = texto.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
       const tags = texto.match(/#[^\s#]+/g) || [];
       const dos = (n) => String(n).padStart(2, '0');
+      const tipo = tipoDe(r.media_type);
+      const nombre = TIPOS[tipo].s;
+      const likes = +r.media_like_count || 0; const coments = +r.media_comments_count || 0;
+      const compartidos = +r.media_shares || 0; const guardados = +r.media_saved || 0;
+      const alcance = +r.media_reach || 0;
+      const inter = +r.media_engagement || +r.media_reel_total_interactions || (likes + coments + compartidos + guardados);
+      const url = String(r.media_url || '');
+      const ret = num(r.media_reel_avg_watch_time); const skip = num(r.media_reel_skip_rate);
       return {
-        id: String(r.media_id), titulo: lineas[0] || (tags[0] ? 'Reel ' + tags[0] : 'Reel sin texto'),
+        id: String(r.media_id), tipo, titulo: lineas[0] || (tags[0] ? nombre + ' ' + tags[0] : nombre + ' sin texto'), texto,
+        ts: utc.getTime(),
         fecha: DIAS[ar.getUTCDay()] + ' ' + ar.getUTCDate() + ' · ' + dos(ar.getUTCHours()) + ':' + dos(ar.getUTCMinutes()),
+        fechaLarga: DIAS[ar.getUTCDay()] + ' ' + ar.getUTCDate() + ' de ' + MESES[ar.getUTCMonth()] + ', ' + dos(ar.getUTCHours()) + ':' + dos(ar.getUTCMinutes()) + ' h',
         hora: ar.getUTCHours() + ar.getUTCMinutes() / 60,
-        vistas: +r.media_views || 0, compartidos: +r.media_shares || 0, guardados: +r.media_saved || 0,
-        retencion: Math.round((+r.media_reel_avg_watch_time || 0) / 100) / 10,
-        gancho: Math.round((1 - (+r.media_reel_skip_rate || 0)) * 100), link: String(r.media_permalink || '')
+        vistas: +r.media_views || 0, alcance, likes, coments, compartidos, guardados, inter,
+        tasa: +r.media_views ? Math.round(1000 * inter / +r.media_views) / 10 : 0,
+        visitas: num(r.media_profile_visits), seguidores: num(r.media_follows),
+        retencion: ret === null ? (tipo === 'reel' ? 0 : null) : Math.round(ret / 100) / 10,
+        gancho: skip === null ? (tipo === 'reel' ? 0 : null) : Math.round((1 - skip) * 100),
+        link: String(r.media_permalink || ''),
+        img: String(r.media_thumbnail_url || '') || (/\.mp4(\?|$)/i.test(url) ? '' : url)
       };
+    });
+    const reels = posts.filter((p) => p.tipo === 'reel');
+    const prom = {};
+    Object.keys(TIPOS).forEach((k) => {
+      const l = posts.filter((p) => p.tipo === k); const n = l.length;
+      const m = (c) => (n ? l.reduce((s, p) => s + p[c], 0) / n : 0);
+      const vis = l.reduce((s, p) => s + p.vistas, 0);
+      prom[k] = { n, vistas: m('vistas'), alcance: m('alcance'), inter: m('inter'), compartidos: m('compartidos'), guardados: m('guardados'), likes: m('likes'), coments: m('coments'), tasa: vis ? Math.round(1000 * l.reduce((s, p) => s + p.inter, 0) / vis) / 10 : 0 };
     });
     const diario = (raw.diario || []).map((r) => ({ date: new Date(String(r.date).slice(0, 10) + 'T00:00:00Z'), r })).sort((a, b) => a.date - b.date);
     const suma = (c) => diario.reduce((s, d) => s + (+d.r[c] || 0), 0);
     const vf = suma('views_followers'); const vnf = suma('views_non_followers');
     const perfil = (raw.perfil || [])[0] || {};
     return {
-      reels, diario, perfil, actualizado: raw.actualizado,
-      tot: { vistas: reels.reduce((s, r) => s + r.vistas, 0), inter: suma('total_interactions'), vf, vnf, pct: vf + vnf ? Math.round(100 * vnf / (vf + vnf)) : 0, seg: +perfil.followers_count || 0 }
+      posts, reels, prom, diario, perfil, actualizado: raw.actualizado,
+      tot: { vistas: posts.reduce((s, r) => s + r.vistas, 0), inter: suma('total_interactions'), vf, vnf, pct: vf + vnf ? Math.round(100 * vnf / (vf + vnf)) : 0, seg: +perfil.followers_count || 0 }
     };
   }
 
@@ -475,7 +656,9 @@ section,.bf-hero{scroll-margin-top:120px}
   }
 
   function horas(first) {
-    const el = document.getElementById('g-horas'); const rows = D.reels; if (!rows.length) return;
+    const el = document.getElementById('g-horas'); const rows = D.posts; if (!rows.length) return;
+    const ley = document.getElementById('ley-horas');
+    ley.innerHTML = Object.keys(TIPOS).filter((k) => D.prom[k].n).map((k) => '<span><i style="background:' + TIPOS[k].c + '"></i>' + TIPOS[k].n + '</span>').join('');
     let svg = d3.select(el).select('svg');
     if (svg.empty()) { svg = d3.select(el).append('svg').attr('role', 'img').attr('aria-label', 'Vistas de cada reel según la hora de publicación'); const g = svg.append('g').attr('class', 'root'); ['bands', 'bf-grid', 'bf-axis', 'dots'].forEach((c) => g.append('g').attr('class', c)); }
     const W = Math.max(260, el.clientWidth); const H = 270; const mg = { t: 26, r: 14, b: 34, l: 14 }; const iw = W - mg.l - mg.r; const ih = H - mg.t - mg.b;
@@ -489,19 +672,123 @@ section,.bf-hero{scroll-margin-top:120px}
     g.select('.bands').selectAll('text').data(bandas.filter((b) => b.t)).join('text').attr('x', (b) => x(b.a) + 10).attr('y', 18).attr('fill', '#A9A59C').style('font', '600 12px Inter,system-ui,sans-serif').text((b) => b.t);
     g.select('.bf-grid').selectAll('line').data([ih]).join('line').attr('x1', 0).attr('x2', iw).attr('y1', ih).attr('y2', ih).style('stroke', '#3A3A40');
     g.select('.bf-axis').attr('transform', `translate(0,${ih})`).selectAll('text').data(iw < 340 ? [0, 12, 24] : [0, 6, 12, 18, 24]).join('text').attr('x', (h) => x(h)).attr('y', 24).attr('text-anchor', (h) => (h === 0 ? 'start' : h === 24 ? 'end' : 'middle')).text((h) => h + ' h');
-    const c = g.select('.dots').selectAll('circle').data(rows, (r) => r.id).join('circle').attr('cx', (r) => x(r.hora)).attr('cy', (r) => y(r.vistas)).attr('fill', '#FF5A1F').attr('fill-opacity', 0.82).attr('stroke', '#17171A').attr('stroke-width', 2).style('cursor', 'pointer');
+    const c = g.select('.dots').selectAll('circle').data(rows, (r) => r.id).join('circle').attr('cx', (r) => x(r.hora)).attr('cy', (r) => y(r.vistas)).attr('fill', (r) => TIPOS[r.tipo].c).attr('fill-opacity', 0.82).attr('stroke', '#17171A').attr('stroke-width', 2).style('cursor', 'pointer');
     if (first && motion) c.attr('r', 0).transition().delay((r, i) => 300 + i * 120).duration(600).ease(d3.easeBackOut).attr('r', (r) => rr(r.compartidos)); else c.attr('r', (r) => rr(r.compartidos));
     const tip = tooltip(el);
     const show = (ev, r) => {
       c.attr('fill-opacity', (q) => (q.id === r.id ? 1 : 0.35));
       tip.selectAll('*').remove();
-      tip.append('div').attr('class', 'bf-tip-k').text(r.fecha);
+      tip.append('div').attr('class', 'bf-tip-k').text(TIPOS[r.tipo].s + ' · ' + r.fecha);
       tip.append('div').attr('class', 'bf-tip-v').text(fInt(r.vistas) + ' vistas');
       tip.append('div').attr('class', 'bf-tip-s').text(trunc(r.titulo, 40) + ' · compartido ' + fInt(r.compartidos) + ' veces');
       tip.style('left', Math.min(Math.max(mg.l + x(r.hora) - 95, 0), W - 190) + 'px').style('top', Math.max(mg.t + y(r.vistas) - rr(r.compartidos) - 8, 80) + 'px').style('opacity', 1);
     };
-    c.on('pointerenter', show).on('pointerdown', show).on('pointerleave', () => { c.attr('fill-opacity', 0.82); tip.style('opacity', 0); });
+    c.on('pointerenter', show).on('pointerdown', show).on('pointerleave', () => { c.attr('fill-opacity', 0.82); tip.style('opacity', 0); }).on('click', (ev, r) => abrir(r));
   }
+
+  // ---- Todas las publicaciones ----
+  const ORDEN = { recientes: (a, b) => b.ts - a.ts, vistas: (a, b) => b.vistas - a.vistas, inter: (a, b) => b.inter - a.inter, compartidos: (a, b) => b.compartidos - a.compartidos, guardados: (a, b) => b.guardados - a.guardados };
+
+  function marcarTipo() {
+    document.querySelectorAll('[data-group="tipo"] button').forEach((b) => b.setAttribute('aria-pressed', b.getAttribute('data-val') === state.tipo ? 'true' : 'false'));
+    document.querySelectorAll('.bf-tipo').forEach((b) => b.setAttribute('aria-pressed', b.getAttribute('data-t') === state.tipo ? 'true' : 'false'));
+  }
+
+  function tiposResumen(first) {
+    const el = document.getElementById('g-tipos');
+    const maxV = Math.max(1, ...Object.keys(TIPOS).map((k) => D.prom[k].vistas));
+    if (!el.children.length) {
+      el.innerHTML = Object.keys(TIPOS).map((k) => {
+        const p = D.prom[k];
+        return '<button type="button" class="bf-tipo' + (p.n ? '' : ' is-vacio') + '" data-t="' + k + '" aria-pressed="false">' +
+          '<span class="bf-tipo-top" style="color:' + TIPOS[k].c + '">' + ICO[k] + '<span style="color:var(--ink)">' + TIPOS[k].n + '</span><span class="bf-tipo-n">' + p.n + (p.n === 1 ? ' publicación' : ' publicaciones') + '</span></span>' +
+          '<span class="bf-tipo-big" data-v="' + Math.round(p.vistas) + '">' + (p.n ? '0' : '—') + '</span>' +
+          '<span class="bf-tipo-lbl">' + (p.n ? 'vistas promedio' : 'todavía no hay') + '</span>' +
+          '<span class="bf-tipo-bar"><i style="background:' + TIPOS[k].c + '" data-w="' + (100 * p.vistas / maxV) + '"></i></span>' +
+          '<span class="bf-tipo-mini"><span>Alcance <b>' + fInt(p.alcance) + '</b></span><span>Interacción <b>' + fDec(p.tasa) + '%</b></span></span>' +
+          '</button>';
+      }).join('');
+      el.querySelectorAll('.bf-tipo').forEach((b) => b.addEventListener('click', () => {
+        const t = b.getAttribute('data-t'); state.tipo = state.tipo === t ? 'todo' : t; marcarTipo(); posteos(false);
+      }));
+      el.querySelectorAll('.bf-tipo-big[data-v]').forEach((n) => { if (n.textContent !== '—') contar(n, +n.getAttribute('data-v'), fInt); });
+      requestAnimationFrame(() => requestAnimationFrame(() => el.querySelectorAll('.bf-tipo-bar i').forEach((i) => { i.style.width = i.getAttribute('data-w') + '%'; })));
+    }
+    marcarTipo();
+  }
+
+  function tarjeta(p, i, esTop) {
+    const v = state.orden === 'inter' ? [p.inter, 'interacciones'] : state.orden === 'compartidos' ? [p.compartidos, 'compartidos'] : state.orden === 'guardados' ? [p.guardados, 'guardados'] : [p.vistas, 'vistas'];
+    return '<button type="button" class="bf-post is-new" data-id="' + esc(p.id) + '" style="animation-delay:' + Math.min(i, 12) * 55 + 'ms" aria-label="' + esc(TIPOS[p.tipo].s + ': ' + p.titulo + ', ' + fInt(v[0]) + ' ' + v[1]) + '">' +
+      '<span class="bf-post-img">' + '<span class="bf-post-ph">' + ICO[p.tipo] + '</span>' +
+      (p.img ? '<img src="' + esc(p.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : '') +
+      '<span class="bf-badge" style="color:' + TIPOS[p.tipo].c + '">' + ICO[p.tipo] + '<span style="color:var(--ink)">' + TIPOS[p.tipo].s + '</span></span>' +
+      (esTop ? '<span class="bf-top">Top</span>' : '') +
+      '<span class="bf-post-v"><b>' + fInt(v[0]) + '</b><span>' + v[1] + '</span></span></span>' +
+      '<span class="bf-post-body"><span class="bf-post-t">' + esc(p.titulo) + '</span><span class="bf-post-d">' + esc(p.fecha) + '</span>' +
+      '<span class="bf-post-m"><span title="Me gusta">' + ICO.like + fInt(p.likes) + '</span><span title="Comentarios">' + ICO.coment + fInt(p.coments) + '</span><span title="Compartidos">' + ICO.share + fInt(p.compartidos) + '</span><span title="Guardados">' + ICO.save + fInt(p.guardados) + '</span></span>' +
+      '</span></button>';
+  }
+
+  function posteos(first) {
+    tiposResumen(first);
+    document.querySelectorAll('.bf-cnt[data-c]').forEach((s) => { const k = s.getAttribute('data-c'); s.textContent = k === 'todo' ? D.posts.length : D.prom[k].n; });
+    const el = document.getElementById('g-posts');
+    const lista = D.posts.filter((p) => state.tipo === 'todo' || p.tipo === state.tipo).sort(ORDEN[state.orden]);
+    if (!lista.length) { el.innerHTML = '<div class="bf-vacio">' + esc(TIPOS[state.tipo] ? TIPOS[state.tipo].vacio : 'No hay publicaciones en estos 30 días.') + '</div>'; return; }
+    const topId = lista.slice().sort(ORDEN[state.orden === 'recientes' ? 'vistas' : state.orden])[0].id;
+    el.innerHTML = lista.map((p, i) => tarjeta(p, i, lista.length > 1 && p.id === topId)).join('');
+    el.querySelectorAll('.bf-post').forEach((b) => b.addEventListener('click', () => abrir(D.posts.find((p) => p.id === b.getAttribute('data-id')))));
+  }
+
+  function abrir(p) {
+    if (!p) return;
+    const dlg = document.getElementById('detalle');
+    const pr = D.prom[p.tipo]; const T = TIPOS[p.tipo];
+    const img = document.getElementById('det-img');
+    img.innerHTML = '<span class="bf-post-ph">' + ICO[p.tipo] + '</span>' + (p.img ? '<img src="' + esc(p.img) + '" alt="" referrerpolicy="no-referrer" onerror="this.remove()">' : '');
+    document.getElementById('det-meta').innerHTML = '<span class="bf-badge" style="color:' + T.c + '">' + ICO[p.tipo] + '<span style="color:var(--ink)">' + T.s + '</span></span><span>' + esc(p.fechaLarga) + '</span>';
+    document.getElementById('det-t').textContent = trunc(p.titulo, 90);
+    const comp = (v, k) => {
+      if (pr.n < 2 || !pr[k]) return '';
+      const d = Math.round(100 * (v / pr[k] - 1));
+      if (Math.abs(d) < 3) return '<small>En tu promedio de ' + T.n.toLowerCase() + '</small>';
+      return '<small class="' + (d > 0 ? 'up' : 'down') + '">' + (d > 0 ? '▲ ' : '▼ ') + Math.abs(d) + '% vs. tu promedio de ' + T.n.toLowerCase() + '</small>';
+    };
+    const m = [
+      ['Vistas', p.vistas, fInt, comp(p.vistas, 'vistas'), true],
+      ['Alcance', p.alcance, fInt, '<small>cuentas distintas que lo vieron</small>'],
+      ['Me gusta', p.likes, fInt, comp(p.likes, 'likes')],
+      ['Comentarios', p.coments, fInt, comp(p.coments, 'coments')],
+      ['Compartidos', p.compartidos, fInt, comp(p.compartidos, 'compartidos')],
+      ['Guardados', p.guardados, fInt, comp(p.guardados, 'guardados')],
+      ['Interacciones', p.inter, fInt, comp(p.inter, 'inter')],
+      ['Tasa de interacción', p.tasa, (v) => fDec(v) + '%', '<small>interacciones cada 100 vistas</small>', true]
+    ];
+    if (p.tipo === 'reel') {
+      m.push(['Retención', p.retencion, (v) => fDec(v) + ' s', '<small>segundos que lo miran en promedio</small>']);
+      m.push(['Gancho', p.gancho, (v) => Math.round(v) + '%', '<small>siguen mirando después de 3 segundos</small>']);
+    } else {
+      if (p.visitas !== null) m.push(['Visitas al perfil', p.visitas, fInt, '<small>entraron a tu perfil desde acá</small>']);
+      if (p.seguidores !== null) m.push(['Seguidores ganados', p.seguidores, fInt, '<small>te empezaron a seguir desde acá</small>']);
+    }
+    const grid = document.getElementById('det-m');
+    grid.innerHTML = m.map((x, i) => '<div class="bf-m' + (x[4] ? ' is-dest' : '') + '" style="animation-delay:' + (120 + i * 40) + 'ms"><span>' + x[0] + '</span><b>' + x[2](motion ? 0 : x[1]) + '</b>' + x[3] + '</div>').join('');
+    grid.querySelectorAll('.bf-m b').forEach((b, i) => contar(b, m[i][1], m[i][2]));
+    const hoy = Date.now() - p.ts < 36 * 3600 * 1000;
+    document.getElementById('det-nota').textContent = hoy ? 'Se publicó hace menos de un día y medio: los números todavía están creciendo.' : (p.tipo === 'reel' ? '' : 'Instagram no da retención ni gancho para ' + T.n.toLowerCase() + '; esos datos son solo de reels.');
+    document.getElementById('det-cap').textContent = p.texto.replace(/(\s*#[^\s#]+)+\s*$/, '').trim() || 'Sin texto.';
+    const a = document.getElementById('det-a'); if (p.link) { a.href = p.link; a.style.display = ''; } else a.style.display = 'none';
+    if (typeof dlg.showModal === 'function') { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute('open', '');
+    dlg.querySelector('.bf-modal-in').scrollTop = 0;
+  }
+
+  (function () {
+    const dlg = document.getElementById('detalle');
+    const cerrar = () => { if (typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open'); };
+    document.getElementById('det-x').addEventListener('click', cerrar);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) cerrar(); });
+  })();
 
   function ranking(first) {
     const el = document.getElementById('g-rank'); const key = state.sort;
@@ -531,7 +818,7 @@ section,.bf-hero{scroll-margin-top:120px}
     else bars.style('transition-delay', '0ms').style('width', w);
   }
 
-  const dibujos = { 'numeros': kpis, 'por-dia': () => graficoDia(true), 'quien-te-ve': () => dona(true), 'horario': () => horas(true), 'ranking': () => ranking(true) };
+  const dibujos = { 'numeros': kpis, 'por-dia': () => graficoDia(true), 'posteos': () => posteos(true), 'quien-te-ve': () => dona(true), 'horario': () => horas(true), 'ranking': () => ranking(true) };
 
   function revelar(sec) {
     if (sec.classList.contains('is-in')) return;
@@ -547,6 +834,7 @@ section,.bf-hero{scroll-margin-top:120px}
       state[clave] = b.getAttribute('data-val');
       if (!D) return;
       if (clave === 'metric' && drawn['por-dia']) graficoDia(false);
+      if ((clave === 'tipo' || clave === 'orden') && drawn['posteos']) { if (clave === 'tipo') marcarTipo(); posteos(false); }
       if (clave === 'sort') { document.getElementById('hint').textContent = hints[state.sort]; if (drawn['ranking']) ranking(false); }
     }));
   });
